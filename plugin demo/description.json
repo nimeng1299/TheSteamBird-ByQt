@@ -1,0 +1,8 @@
+{
+	"name": "pluginA",
+	"nickname": "插件显示的名称",
+	"author": "author",
+	"version": "1.0.0",
+	"platform": 2,
+	"description": "插件的描述"
+}
