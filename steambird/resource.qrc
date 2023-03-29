@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/fonts.ttf</file>
+        <file>res/ico32.ico</file>
+        <file>res/ico256.ico</file>
+        <file>res/minus.png</file>
+        <file>res/max.png</file>
+        <file>res/restore.png</file>
+        <file>res/close.png</file>
+    </qresource>
+</RCC>

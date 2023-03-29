@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>res/star.png</file>
+        <file>res/Tower_Stage.png</file>
+    </qresource>
+</RCC>

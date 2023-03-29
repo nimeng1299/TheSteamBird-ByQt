@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>res/Commission.png</file>
+        <file>res/Domains.png</file>
+        <file>res/FragileResin.png</file>
+        <file>res/ParametricTransformer.png</file>
+        <file>res/SereniteaPot.png</file>
+    </qresource>
+    <qresource prefix="/world">
+        <file>world/UI_ChapterBackground_ChasmsMaw.png</file>
+        <file>world/UI_ChapterBackground_Daoqi.png</file>
+        <file>world/UI_ChapterBackground_Dragonspine.png</file>
+        <file>world/UI_ChapterBackground_Enkanomiya.png</file>
+        <file>world/UI_ChapterBackground_Liyue.png</file>
+        <file>world/UI_ChapterBackground_Mengde.png</file>
+        <file>world/UI_ChapterBackground_Xumi.png</file>
+        <file>world/UI_ChapterInnerIcon_ChasmsMaw.png</file>
+        <file>world/UI_ChapterInnerIcon_Daoqi.png</file>
+        <file>world/UI_ChapterInnerIcon_Dragonspine.png</file>
+        <file>world/UI_ChapterInnerIcon_Enkanomiya.png</file>
+        <file>world/UI_ChapterInnerIcon_Liyue.png</file>
+        <file>world/UI_ChapterInnerIcon_Mengde.png</file>
+        <file>world/UI_ChapterInnerIcon_Xumi.png</file>
+    </qresource>
+</RCC>

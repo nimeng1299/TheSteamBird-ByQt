@@ -1,0 +1,8 @@
+{
+	"name":"overview",
+	"nickname":"总览",
+	"author" : "eula",
+	"version":"1.0.0",
+	"platform":2,
+	"description":"显示账号的基本信息"
+}

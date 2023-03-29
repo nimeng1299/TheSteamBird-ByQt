@@ -1,0 +1,248 @@
+<!--
+  ��ʾ�������� https://echarts.apache.org/examples/zh/editor.html?c=area-stack
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+
+
+    <script type="text/javascript" src="qrc:/echarts/gacha_echarts/echarts.min.js"></script>
+    <!-- Uncomment this line if you want to dataTool extension
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/dataTool.min.js"></script>
+    -->
+    <!-- Uncomment this line if you want to use gl extension
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+    -->
+    <!-- Uncomment this line if you want to echarts-stat extension
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+    -->
+    <!-- Uncomment this line if you want to use map
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+    -->
+    <!-- Uncomment these two lines if you want to use bmap extension
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/bmap.min.js"></script>
+    -->
+
+    <script type="text/javascript">
+        var dom = document.getElementById('container');
+        var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+        });
+        var app = {};
+        function init() {
+            var option;
+
+            option = {
+                dataZoom: [{
+                    type: "inside"
+
+                }],
+                title: {
+                    text: 'Stacked Area Chart'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#6a7985'
+                        }
+                    }
+                },
+                legend: {
+                    data: ['角色活动祈愿', '武器活动祈愿', '常驻祈愿']
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'time',
+                        boundaryGap: false
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value'
+                    }
+                ],
+                series: [
+                    {
+                        name: '角色活动祈愿',
+                        type: 'line',
+                        areaStyle: {},
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [0, 0, 0, 0, 0, 0, 0]
+                    },
+                    {
+                        name: '武器活动祈愿',
+                        type: 'line',
+                        areaStyle: {},
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [0, 0, 0, 0, 0, 0, 0]
+                    },
+                    {
+                        name: '常驻祈愿',
+                        type: 'line',
+                        areaStyle: {},
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [0, 0, 0, 0, 0, 0, 0]
+                    }
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+        }
+
+        function init2(str) {
+            var option;
+
+            option = {
+                dataZoom: [{
+                    type: "inside"
+
+                }],
+                title: {
+                    text: '祈愿记录'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#6a7985'
+                        }
+                    }
+                },
+                legend: {
+                    data: ['角色活动祈愿', '武器活动祈愿', '常驻祈愿']
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'time',
+                        
+
+                        boundaryGap: false
+                        
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value'
+                    }
+                ],
+                series: [
+                    {
+                        name: '角色活动祈愿',
+                        type: 'line',
+
+                        areaStyle: {},
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    formatter: function (data) {
+                                        return str["value1"][data.dataIndex];
+
+                                    }
+
+                                }
+                            }
+                        },
+                        data: str["data1"].map(item => [new Date(item[0]), item[1]])
+                    },
+                    {
+                        name: '武器活动祈愿',
+                        type: 'line',
+
+                        areaStyle: {},
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    formatter: function (data) {
+                                        return str["value2"][data.dataIndex];
+
+                                    }
+
+                                }
+                            }
+                        },
+                        data: str["data2"].map(item => [new Date(item[0]), item[1]])
+                    },
+                    {
+                        name: '常驻祈愿',
+                        type: 'line',
+
+                        areaStyle: {},
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    formatter: function (data) {
+                                        return str["value3"][data.dataIndex];
+
+                                    }
+
+                                }
+                            }
+                        },
+                        data: str["data3"].map(item => [new Date(item[0]), item[1]])
+                    }
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+        }
+
+
+        init();
+        window.addEventListener('resize', myChart.resize);
+    </script>
+</body>
+</html>

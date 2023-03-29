@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/echarts">
+        <file>gacha_echarts/echart.html</file>
+        <file>gacha_echarts/echarts.min.js</file>
+    </qresource>
+</RCC>
